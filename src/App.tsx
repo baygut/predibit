@@ -1,10 +1,10 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import ErrorBoundary from "@/components/ErrorBoundary";
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Toaster } from "@/components/ui/toaster";
-import Footer from "@/components/Footer";
-import { Etherspot, Home, Wagmi, PredictionMarket } from "@/pages";
-import ErrorBoundary from "@/components/ErrorBoundary";
+import { Home, PredictionMarket, Wagmi } from "@/pages";
 import { useEffect } from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 
 function App() {
     useEffect(() => {
@@ -23,9 +23,12 @@ function App() {
                     <Navbar />
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="/aa" element={<Etherspot />} />
+                        <Route path="/home" element={<Home />} />
                         <Route path="/wagmi" element={<Wagmi />} />
-                        <Route path="/prediction" element={<PredictionMarket />} />
+                        <Route
+                            path="/prediction"
+                            element={<PredictionMarket />}
+                        />
                     </Routes>
                     <Footer />
                     <Toaster />
