@@ -19,7 +19,7 @@ export default function BalanceRBTC() {
 
     if (isLoading)
         return (
-            <div className="text-xs sm:text-sm text-gray-400 rounded-lg bg-gradient-to-r from-gray-600/20 to-gray-700/20 backdrop-blur-lg p-2 sm:px-4 sm:py-2">
+            <div className="mt-2 text-xs sm:text-sm text-gray-400 rounded-lg bg-gradient-to-r from-gray-600/20 to-gray-700/20 backdrop-blur-lg p-2 sm:px-4 sm:py-2">
                 Loading balance...
             </div>
         );
