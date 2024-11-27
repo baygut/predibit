@@ -1,4 +1,4 @@
-import React, { Component, ErrorInfo, ReactNode } from 'react';
+import { Component, ErrorInfo, ReactNode } from "react";
 
 interface Props {
     children: ReactNode;
@@ -14,7 +14,7 @@ class ErrorBoundary extends Component<Props, State> {
     public state: State = {
         hasError: false,
         error: null,
-        errorInfo: null
+        errorInfo: null,
     };
 
     public static getDerivedStateFromError(error: Error): State {
@@ -22,10 +22,10 @@ class ErrorBoundary extends Component<Props, State> {
     }
 
     public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-        console.error('ErrorBoundary caught an error:', error, errorInfo);
+        console.error("ErrorBoundary caught an error:", error, errorInfo);
         this.setState({
             error,
-            errorInfo
+            errorInfo,
         });
     }
 
@@ -34,9 +34,13 @@ class ErrorBoundary extends Component<Props, State> {
             return (
                 <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white p-4">
                     <div className="max-w-2xl">
-                        <h1 className="text-2xl font-bold mb-4">Something went wrong</h1>
+                        <h1 className="text-2xl font-bold mb-4">
+                            Something went wrong
+                        </h1>
                         <div className="bg-gray-800 p-4 rounded-lg mb-4">
-                            <p className="text-red-400">{this.state.error?.toString()}</p>
+                            <p className="text-red-400">
+                                {this.state.error?.toString()}
+                            </p>
                         </div>
                         {this.state.errorInfo && (
                             <div className="bg-gray-800 p-4 rounded-lg overflow-auto">
