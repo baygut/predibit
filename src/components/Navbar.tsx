@@ -13,6 +13,11 @@ export default function Navbar(): JSX.Element {
                     className="w-[150px] h-[50px] object-contain bg-primary ring-2 ring-white/50 rounded-xl p-1"
                 />
             </Link>
+            <div className="flex items-center gap-6">
+                <Link to="/prediction" className="text-white hover:text-primary transition-colors">
+                    Markets
+                </Link>
+            </div>
             <div className="flex flex-col items-center">
                 <ConnectButton
                     showBalance={false}
